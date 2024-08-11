@@ -7,5 +7,6 @@ export default {
     "errorGettingLoans": "Sorry but we are having issue loading loans",
     "loanApplicationDashboard": "Loan Application Dashboard",
     "quickUnSecuredLoans": "Quick and convienent unsecured loans",
-    
+    "loadingAvaliableLoanTypes": "Please wait avaliable loans are loaded",
+
 };

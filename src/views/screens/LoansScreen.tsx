@@ -2,13 +2,18 @@ import ILoan from "@models/ILoan";
 import MainLayout from "@views/layouts/MainLayout";
 import { FlatList, StyleSheet, View, TextInput, Image } from "react-native";
 import useOrientation from "@hooks/useOrientation";
-import { Text, useTheme } from "react-native-paper";
+import { Text } from "react-native-paper";
 import { translator } from "@utils/translator";
 import { NavigationProps } from "@config/routes";
 import { globalStyles } from "@views/themes/styles";
 import LoanCard from "@views/components/LoanCard";
-import AppButton, { ButtonType } from "@views/components/AppButton";
+import { GET_LOAN_PRODUCTS, GetLoanProductsData } from '@gql/queries/queries';
+
 import ApplyForLoanButton from "@views/components/ApplyForLoanButton";
+import { useQuery } from "@apollo/client";
+import { useEffect } from "react";
+import Loader from "@views/components/Loader";
+import ErrorComponent from "@views/components/ErrorComponent";
 
 
 interface IProps {
@@ -22,18 +27,20 @@ const data: ILoan[] = [
 ]
 
 const LoansScreen: React.FC<IProps> = ({ navigation }) => {
-    const { colors } = useTheme()
+    const { loading, error, data } = useQuery<GetLoanProductsData>(GET_LOAN_PRODUCTS);
 
     const { isLandscape } = useOrientation()
+
 
     const renderItem = ({ item }: { item: ILoan }) => (
         <LoanCard loan={item} />
     );
 
     const renderAvaliableLoanTypes = () => {
-
+        if (loading) return <Loader message={translator({translationId:"loadingAvaliableLoanTypes"})}/>;
+        if (error) return <ErrorComponent message={translator({ translationId: "errorGettingLoans" })} />
         return <FlatList
-            data={data}
+            data={data?.loanProducts}
             renderItem={renderItem}
             keyExtractor={(item) => item.id.toString()}
             numColumns={isLandscape ? 2 : 1}

@@ -15,6 +15,7 @@ module.exports = {
           '@hooks': './src/hooks',
           '@assets': './src/assets',
           '@utils': './src/utils',
+          '@gql': './src/graphql',
         },
       },
     ],
