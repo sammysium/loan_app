@@ -14,6 +14,7 @@ import { useQuery } from "@apollo/client";
 import { useEffect } from "react";
 import Loader from "@views/components/Loader";
 import ErrorComponent from "@views/components/ErrorComponent";
+import { useStore } from "@store/useStore";
 
 
 interface IProps {
@@ -27,9 +28,16 @@ const data: ILoan[] = [
 ]
 
 const LoansScreen: React.FC<IProps> = ({ navigation }) => {
+    const { actions } = useStore();
     const { loading, error, data } = useQuery<GetLoanProductsData>(GET_LOAN_PRODUCTS);
 
     const { isLandscape } = useOrientation()
+
+    useEffect(() => {
+        if (data && data.loanProducts) {
+            actions.setLoanTypes(data.loanProducts)
+        }
+    }, [data]);
 
 
     const renderItem = ({ item }: { item: ILoan }) => (

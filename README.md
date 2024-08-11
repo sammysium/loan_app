@@ -17,9 +17,14 @@ or
 
 npm run ios
 
+# Running Tests
+
+   npm run test
+
 # Basic Principles
 
 1. Absolute imports > relative imports. Checkout tsconfig and babel.
+
 2. Libraries change, get outdated and a whole more. As much as possible, create middleware layers that makes changing easy. Confusing? Not a problem.
 
    Say you decide to use Conext API for centralized state management. In your app, you will use useContext here and there. Imagine you have 10, 20 or 40 screens!
@@ -31,5 +36,6 @@ npm run ios
    The logic goes to many. Look at HttpCall that exposes axios. If you decide to move to fetch, you only need to change HttpCall class.
 
    How cool is that?
+
 3. Prepare localization early on. Look at utils/translator. YOu can choose a library of your choice (I love react-i18n with next). Once again, UI won't need to change at all.
 

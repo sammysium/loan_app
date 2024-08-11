@@ -14,6 +14,7 @@ import routes from '@config/routes';
 import NumidaTheme from '@views/themes/theme';
 import { ApolloProvider } from '@apollo/client';
 import client from '@gql/client/client';
+import { AppContextProvider } from '@store/AppContext';
 
 
 function App(): React.JSX.Element {
@@ -21,13 +22,14 @@ function App(): React.JSX.Element {
 
   return (
       <NavigationContainer>
+        <AppContextProvider>
         <ApolloProvider client={client}>
         <PaperProvider theme={NumidaTheme}>
           {routes()}
         </PaperProvider>
         </ApolloProvider>
 
-     
+        </AppContextProvider>
   
       </NavigationContainer>
   );
