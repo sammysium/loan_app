@@ -9,7 +9,12 @@ module.exports = {
         alias: {
          
           '@models': './src/models',
-      
+          '@views': './src/views',
+          '@config': './src/config',
+          '@themes': './src/themes',
+          '@hooks': './src/hooks',
+          '@assets': './src/assets',
+          '@utils': './src/utils',
         },
       },
     ],
