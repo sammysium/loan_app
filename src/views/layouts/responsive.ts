@@ -27,19 +27,19 @@ const platformResponsives: PlatformResponsives = {
     ios: {
         portrait: {
             extraSmall: {
-                horizontalPadding: 2
+                horizontalPadding: 20
             },
             small: {
-                horizontalPadding: 500
+                horizontalPadding: 25
             },
             medium: {
-                horizontalPadding: 7
+                horizontalPadding: 30
             },
             large: {
-                horizontalPadding: 10
+                horizontalPadding: 35
             },
             extraLarge: {
-                horizontalPadding: 15
+                horizontalPadding: 40
             }
         },
         landscape: {
@@ -63,36 +63,36 @@ const platformResponsives: PlatformResponsives = {
     android: {
         portrait: {
             extraSmall: {
-                horizontalPadding: 2
+                horizontalPadding: 20
             },
             small: {
-                horizontalPadding: 5
-            },
-            medium: {
-                horizontalPadding: 10
-            },
-            large: {
-                horizontalPadding: 15
-            },
-            extraLarge: {
-                horizontalPadding: 20
-            }
-        },
-        landscape: {
-            extraSmall: {
-                horizontalPadding: 10
-            },
-            small: {
-                horizontalPadding: 20
+                horizontalPadding: 25
             },
             medium: {
                 horizontalPadding: 30
             },
             large: {
-                horizontalPadding: 40
+                horizontalPadding: 35
             },
             extraLarge: {
-                horizontalPadding: 50
+                horizontalPadding: 40
+            }
+        },
+        landscape: {
+            extraSmall: {
+                horizontalPadding: 20
+            },
+            small: {
+                horizontalPadding: 25
+            },
+            medium: {
+                horizontalPadding: 30
+            },
+            large: {
+                horizontalPadding: 35
+            },
+            extraLarge: {
+                horizontalPadding: 45
             }
         },
     }

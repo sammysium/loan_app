@@ -90,6 +90,7 @@ const ApplyForLoanScreen: React.FC<IProps> = ({ navigation }) => {
                 placeHolderText="yourname@example.com"
                 errorMessage={errors["email"]}
                 testId="email"
+                keyboardType="email-address"
             />
 
             <TextEntry 
