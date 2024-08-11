@@ -2,7 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { useTheme } from 'react-native-paper';
 import { NavigationProps } from '@config/routes';
-import AppButton, { ButtonType } from './AppButton';
+import AppButton, { ButtonType } from '@views/components/AppButton';
+import ApplyForLoanButton from '@views/components/ApplyForLoanButton';
 
 
 const { width } = Dimensions.get('window');
@@ -25,14 +26,7 @@ const Header: React.FC<IProps> = ({navigation}) => {
              textColor={colors.primary}
              onPressHandler={() => console.log('go to login')} 
         />
-        <AppButton 
-             backgroundColor={colors.secondaryContainer}
-             upperCase={false}
-             buttonType={ButtonType.Text} 
-             labelTranslationId='login' 
-             textColor={colors.primary}
-             onPressHandler={() => console.log('go to loan application screen')} 
-        />
+        <ApplyForLoanButton navigation={navigation}/>
       </View>
     </View>
   );

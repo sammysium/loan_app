@@ -8,6 +8,7 @@ import { NavigationProps } from "@config/routes";
 import { globalStyles } from "@views/themes/styles";
 import LoanCard from "@views/components/LoanCard";
 import AppButton, { ButtonType } from "@views/components/AppButton";
+import ApplyForLoanButton from "@views/components/ApplyForLoanButton";
 
 
 interface IProps {
@@ -48,14 +49,7 @@ const LoansScreen: React.FC<IProps> = ({ navigation }) => {
                 <View style={styles.box}>
                     <Text style={globalStyles.main_header}>{translator({ translationId: "loanApplicationDashboard" })}</Text>
                     <Text style={globalStyles.sub_header}>{translator({ translationId: "quickUnSecuredLoans" })}</Text>
-                    <AppButton
-                        backgroundColor={colors.secondaryContainer}
-                        upperCase={false}
-                        buttonType={ButtonType.Text}
-                        labelTranslationId='login'
-                        textColor={colors.primary}
-                        onPressHandler={() => console.log('go to login')}
-                    />
+                    <ApplyForLoanButton navigation={navigation}/>
 
                 </View>
 
