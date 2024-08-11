@@ -39,3 +39,19 @@ npm run ios
 
 3. Prepare localization early on. Look at utils/translator. YOu can choose a library of your choice (I love react-i18n with next). Once again, UI won't need to change at all.
 
+4. Validations: form validations are in validations directory. Why? Major changes in react-native make upgrading libraries are hard. validatorjs (and any other pure JS validation functions) are safer bet since they are library or so agnostic. Besides, we can share custom, in-company validations across different apps.
+
+
+
+# Demos
+![Screenshot_20240812_014950](https://github.com/user-attachments/assets/b240ef18-a097-4336-b326-990819d074e2)
+![Screenshot_20240812_014931](https://github.com/user-attachments/assets/5a2b33d6-00b2-4aa0-a671-5c8923fea70f)
+
+
+
+https://github.com/user-attachments/assets/0d449c9e-3c84-42c1-b518-6519875e034e
+
+
+
+
+
