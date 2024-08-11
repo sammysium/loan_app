@@ -1,79 +1,35 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Welcome to Numida Loan Application! With the app, you get to see list of available loans and apply for a new loan!
 
-## Step 1: Start the Metro Server
+# Running the application
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+Follow the following simple steps to run the application
 
-To start Metro, run the following command from the _root_ of your React Native project:
-
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
+Clone the repo
+Run npm install
+create .env file and add AVALIABLE_LOAN_TYPES_END_POINT=http://10.0.2.2:5000/, stating the port of your backend
 npm run android
 
-# OR using Yarn
-yarn android
-```
+or
 
-### For iOS
-
-```bash
-# using npm
 npm run ios
 
-# OR using Yarn
-yarn ios
-```
+# Basic Principles
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+1. Absolute imports > relative imports. Checkout tsconfig and babel.
+2. Libraries change, get outdated and a whole more. As much as possible, create middleware layers that makes changing easy. Confusing? Not a problem.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+   Say you decide to use Conext API for centralized state management. In your app, you will use useContext here and there. Imagine you have 10, 20 or 40 screens!
 
-## Step 3: Modifying your App
+   A year later, you decide to move to Redux. The change will be a nightmare. Then a new state management comes out and you have to go all out again.
 
-Now that you have successfully run the app, let's modify it.
+   So we create a middleware layer that would hide the choice of state from our UI. When we move to another library for any reason, the change will be in selected files.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+   The logic goes to many. Look at HttpCall that exposes axios. If you decide to move to fetch, you only need to change HttpCall class.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+   How cool is that?
+3. Prepare localization early on. Look at utils/translator. YOu can choose a library of your choice (I love react-i18n with next). Once again, UI won't need to change at all.
 
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
