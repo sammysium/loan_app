@@ -8,5 +8,19 @@ export default {
     "loanApplicationDashboard": "Loan Application Dashboard",
     "quickUnSecuredLoans": "Quick and convienent unsecured loans",
     "loadingAvaliableLoanTypes": "Please wait avaliable loans are loaded",
+    "fullName": "Full Name",
+    "email": "Email",
+    "loanAmount": "Loan Amount",
+    "loanPurpose": "Loan Purpose",
+    "loanPurposeExample": "Home Loan",
+    "success": "Success",
+    "applicationSubmitted": "Your loan application was submitted.",
+    "error": "Error",
+    "errorInvalidEmailFormat": "Please enter valid email",
+    "errorFullNameMissing" : "Please enter valid name",
+    "errorInvalidLoanAmount": "Loan amount must be between 0 and 100",
+    "errorInvalidPurpose": "You must state purpose of the loan",
+    "submittingApplication": "Submitting Application...",
+    "applicationSubmissionFailed": "There was an error submitting your loan application"
 
 };

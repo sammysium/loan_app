@@ -16,6 +16,8 @@ module.exports = {
           '@assets': './src/assets',
           '@utils': './src/utils',
           '@gql': './src/graphql',
+          '@services': './src/services',
+          '@validations': './src/validations',
         },
       },
     ],

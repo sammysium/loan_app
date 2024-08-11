@@ -20,7 +20,7 @@ const ApplyForLoanButton: React.FC<IProps> = ({ navigation }) => {
             buttonType={ButtonType.Contained}
             labelTranslationId='applyForLoan'
             textColor={colors.secondaryContainer}
-            onPressHandler={() => console.log('go to application screen')}
+            onPressHandler={() => navigation.navigate("Apply")}
             compact
             displayStyle={{ fontSize: 9, marginHorizontal: 20, marginVertical: 2 }}
         />

@@ -1,7 +1,8 @@
 export const config = {
     default: {
         loan: {
-            minimum: 10
+            minimum: 10,
+            maximum: 1000
         },
         currency: {
             name: "USD",
