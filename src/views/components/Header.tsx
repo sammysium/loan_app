@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import { Button } from 'react-native-paper';
+import { useTheme } from 'react-native-paper';
 import { NavigationProps } from '@config/routes';
+import AppButton, { ButtonType } from './AppButton';
 
 
 const { width } = Dimensions.get('window');
@@ -11,13 +12,27 @@ interface IProps {
 }
 
 const Header: React.FC<IProps> = ({navigation}) => {
-  
+  const { colors } = useTheme()
   return (
     <View style={styless.headerContainer}>
       <Text style={styless.companyName}>Numida</Text>
       <View style={styless.buttonContainer}>
-        <Button>Login</Button>
-        <Button>Apply for a loan</Button>
+      <AppButton 
+             backgroundColor={colors.secondaryContainer}
+             upperCase={false}
+             buttonType={ButtonType.Text} 
+             labelTranslationId='login' 
+             textColor={colors.primary}
+             onPressHandler={() => console.log('go to login')} 
+        />
+        <AppButton 
+             backgroundColor={colors.secondaryContainer}
+             upperCase={false}
+             buttonType={ButtonType.Text} 
+             labelTranslationId='login' 
+             textColor={colors.primary}
+             onPressHandler={() => console.log('go to loan application screen')} 
+        />
       </View>
     </View>
   );

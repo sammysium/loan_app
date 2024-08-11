@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Button, Card, Text, ThemeBase } from 'react-native-paper';
+import { Card, Text } from 'react-native-paper';
 import ILoan from '@models/ILoan';
 import { withTheme } from 'react-native-paper';
 import { globalStyles } from '@views/themes/styles';
 import { formatCurrency } from '@utils/dataFormatter';
 import { translator } from '@utils/translator';
-
+import AppButton, { ButtonType } from './AppButton';
 
 
 interface IProps {
@@ -25,10 +25,17 @@ const LoanCard: React.FC<IProps> = ({ loan, theme }) => {
         <View style={styles.container}>
           <View style={styles.leftContent}>
             <Text>{translator({translationId:"interestRate"})}</Text>
-         
             <Text>{loan.interestRate} %</Text>
           </View>
-          <Button>Learn More</Button>
+          <AppButton
+            buttonType={ButtonType.Outlined}
+            labelTranslationId="learnMore"
+            icon="arrow-right-thin"
+            putIconOnLeft={false}
+            iconColor="blue"
+            onPressHandler={() => console.log('Button pressed')}
+            
+          />
         </View>
       </Card.Content>
     </Card>

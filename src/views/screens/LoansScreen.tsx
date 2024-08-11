@@ -2,25 +2,26 @@ import ILoan from "@models/ILoan";
 import MainLayout from "@views/layouts/MainLayout";
 import { FlatList, StyleSheet, View, TextInput, Image } from "react-native";
 import useOrientation from "@hooks/useOrientation";
-import { Button, Text, useTheme } from "react-native-paper";
+import { Text, useTheme } from "react-native-paper";
 import { translator } from "@utils/translator";
 import { NavigationProps } from "@config/routes";
 import { globalStyles } from "@views/themes/styles";
 import LoanCard from "@views/components/LoanCard";
+import AppButton, { ButtonType } from "@views/components/AppButton";
 
 
 interface IProps {
     navigation: NavigationProps
 }
 
-const data : ILoan[] = [
-    {id: 1, name: "Loan 1", maximumAmount: 10, interestRate: 41},
-    {id: 2, name: "Loan 2", maximumAmount: 20, interestRate: 51},
-    {id: 3, name: "Loan 3", maximumAmount: 30, interestRate: 61},
+const data: ILoan[] = [
+    { id: 1, name: "Loan 1", maximumAmount: 10, interestRate: 41 },
+    { id: 2, name: "Loan 2", maximumAmount: 20, interestRate: 51 },
+    { id: 3, name: "Loan 3", maximumAmount: 30, interestRate: 61 },
 ]
 
 const LoansScreen: React.FC<IProps> = ({ navigation }) => {
-   
+    const { colors } = useTheme()
 
     const { isLandscape } = useOrientation()
 
@@ -29,7 +30,7 @@ const LoansScreen: React.FC<IProps> = ({ navigation }) => {
     );
 
     const renderAvaliableLoanTypes = () => {
-       
+
         return <FlatList
             data={data}
             renderItem={renderItem}
@@ -47,7 +48,14 @@ const LoansScreen: React.FC<IProps> = ({ navigation }) => {
                 <View style={styles.box}>
                     <Text style={globalStyles.main_header}>{translator({ translationId: "loanApplicationDashboard" })}</Text>
                     <Text style={globalStyles.sub_header}>{translator({ translationId: "quickUnSecuredLoans" })}</Text>
-                    <Button>Apply for a loan</Button>
+                    <AppButton
+                        backgroundColor={colors.secondaryContainer}
+                        upperCase={false}
+                        buttonType={ButtonType.Text}
+                        labelTranslationId='login'
+                        textColor={colors.primary}
+                        onPressHandler={() => console.log('go to login')}
+                    />
 
                 </View>
 
