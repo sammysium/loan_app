@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import { Text } from "react-native-paper"
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { ActivityIndicator } from 'react-native-paper';
 
 interface IProps {
     message: string
@@ -8,8 +8,8 @@ interface IProps {
 
 const Loader: React.FC<IProps> = ({message}) => {
     return <View style={styles.container}>
-    <Icon name="error" size={50} color="red" style={styles.icon} />
-    <Text style={styles.errorText}>{message}</Text>
+      <ActivityIndicator animating={true} />
+      <Text style={styles.text}>{message}</Text>
   </View>
 }
 
@@ -20,11 +20,8 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       padding: 20,
     },
-    icon: {
-      marginBottom: 10,
-    },
-    errorText: {
-      color: 'red',
+    text: {
+      color: 'blue',
       fontSize: 16,
       fontWeight: 'bold',
     },
