@@ -51,6 +51,7 @@ const styless = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: 'row',
+    alignItems: 'center', 
   },
 });
 
