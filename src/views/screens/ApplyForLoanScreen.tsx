@@ -13,12 +13,14 @@ import GenericFormErrorFields from "@models/GenericFormErrorFields";
 import TextEntry from "@views/components/TextEntry";
 import AppButton, { ButtonType } from "@views/components/AppButton";
 import Spacer from "@views/components/Spacer";
+import { useStore } from "@store/useStore";
 
 interface IProps {
     navigation: NavigationProps
 }
 
 const ApplyForLoanScreen: React.FC<IProps> = ({ navigation }) => {
+    
     const { colors } = useTheme()
     const [errors, setFormErrors] = useState<GenericFormErrorFields>({})
     const [loading, setLoading] = useState(false)

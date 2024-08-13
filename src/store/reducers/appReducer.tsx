@@ -14,38 +14,16 @@ export type Actions =
 export const AppReducer = (state: IAppState, action: Actions): IAppState => {
 
   switch (action.type) {
-    
-    /*
-    case 'SET_SUBJECT':
-      console.log(action.payload, action.type)
-      return {
-        ...state,
-        activeRecord: {
-          ...state.activeRecord,
-          activeSubject: action.payload,
-        },
-      };
+  
 
-    case 'SET_LEVEL':
-    
-      return {
-        ...state,
-        activeRecord: {
-          ...state.activeRecord,
-          activeLevel: action.payload,
-        }
-      }
-
-    case 'SET_CONTENT':
+    case "SET_LOAN_TYPES":
       return {
         ...state, 
-        activeRecord: {
-          ...state.activeRecord,
-          activeContent: action.payload
+        data: {
+          loans: action.payload
         }
       }
-      */
-
+    
     default:
       return state;
   }

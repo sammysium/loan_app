@@ -6,6 +6,8 @@ import { withTheme } from 'react-native-paper';
 import { globalStyles } from '@views/themes/styles';
 import { formatCurrency } from '@utils/dataFormatter';
 import { translator } from '@utils/translator';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import AppButton, { ButtonType } from './AppButton';
 
 
@@ -27,15 +29,28 @@ const LoanCard: React.FC<IProps> = ({ loan, theme }) => {
             <Text>{translator({translationId:"interestRate"})}</Text>
             <Text>{loan.interestRate} %</Text>
           </View>
-          <AppButton
-            buttonType={ButtonType.Outlined}
-            labelTranslationId="learnMore"
-            icon="arrow-right-thin"
-            putIconOnLeft={false}
-            iconColor="blue"
-            onPressHandler={() => console.log('Button pressed')}
+          <View style={{flexDirection: 'row', 
+            alignItems: "center", 
+            borderWidth: 1, 
+            borderColor: "blue", 
+            borderRadius: 10,
+            paddingRight: 10
             
+            }}>
+          <AppButton
+            buttonType={ButtonType.Text}
+            labelTranslationId="learnMore"
+            compact
+            displayStyle={{ fontSize: 9, marginHorizontal: 20, marginVertical: 2 }}
+           // icon="arrow-right-thin"
+            //putIconOnLeft={false}
+            //iconColor="blue"
+            onPressHandler={() => console.log('Button pressed')}
           />
+          <Icon name="arrow-right-thin" color="blue" />
+    
+          </View>
+        
         </View>
       </Card.Content>
     </Card>
